@@ -31,6 +31,8 @@ class World: commonItems::parser
 		std::filesystem::path path;
 	} saveGame;
 
+	parser saveSplitParser; // temp parser until rakaly can do this for us.
+
 	std::filesystem::path EU5Path;
 	Mods mods;
 	commonItems::ModFilesystem modFS;

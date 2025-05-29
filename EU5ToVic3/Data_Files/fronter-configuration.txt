@@ -15,7 +15,7 @@ pagesCommitIdUrl = "https://paradoxgameconverters.com/commit_ids/EU5ToVic3.txt"
 overwritePlayset = true
 
 requiredFolder = {
-	name = EU5directory
+	name = EU5Directory
 	displayName = EU5FOLDER
 	tooltip = EU5FOLDERTIP
 	mandatory = true
@@ -28,10 +28,10 @@ requiredFolder = {
 	tooltip = EU5DOCTIP
 	mandatory = true
 	searchPathType = windowsUsersFolder
-	searchPath = "Paradox Interactive\Europa Universalis IV"
+	searchPath = "Paradox Interactive\Europa Universalis V"
 }
 requiredFolder = {
-	name = Vic3directory
+	name = Vic3Directory
 	displayName = VIC3FOLDER
 	tooltip = VIC3FOLDERTIP
 	mandatory = true
@@ -53,6 +53,6 @@ requiredFile = {
 	mandatory = true
 	outputtable = true
 	searchPathType = windowsUsersFolder
-	searchPath = "Paradox Interactive\Europa Universalis IV\save games"
-	allowedExtension = "*.eu4"
+	searchPath = "Paradox Interactive\Europa Universalis V\save games"
+	allowedExtension = "*.eu5"
 }

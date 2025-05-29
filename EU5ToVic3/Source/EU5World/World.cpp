@@ -19,7 +19,18 @@ EU5::World::World(const std::shared_ptr<Configuration>& theConfiguration, const 
 	Log(LogLevel::Progress) << "6 %";
 
 	Log(LogLevel::Info) << "-> Verifying EU5 save.";
-	verifySave();
+	// verifySave(); - disabling until rakaly, let's do it manually.
+	saveSplitParser.registerKeyword("metadata", [this](std::istream& theStream) {
+		saveGame.metadata = commonItems::stringOfItem(theStream).getString();
+	});
+	saveSplitParser.registerKeyword(commonItems::catchallRegex, [this](std::istream& theStream) {
+		saveGame.gamestate += commonItems::stringOfItem(theStream).getString();
+	});
+
+	const std::ifstream saveFile(saveGame.path, std::ios::in | std::ios::binary);
+
+
+
 	Log(LogLevel::Progress) << "7 %";
 
 	Log(LogLevel::Progress) << "\t* Importing Save. *";
